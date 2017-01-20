@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <nav>
+      <a href="/">Back to build list</a>
+    </nav>
+    <h1>Diff images for build {{buildNumber}}</h1>
+    {{#if diffs}}
+      <p>
+        If the following diff images reflect intended changes, please follow the following procedure.
+      </p>
+      <figure>
+        <figcaption>Baseline Validation Procedure Snippet (<a target="blank" href="https://github.com/peopledoc/peopledoc-ui/blob/master/CONTRIBUTING.md#validating-a-new-baseline">documentation</a>)</figcaption>
+        <code>
+          <pre>make build={{buildNumber}} visual-baseline-update</pre>
+          <pre>git add .</pre>
+          <pre>git cz</pre>
+          <pre>git push origin</pre>
+          </code>
+      </figure>
+        {{#each diffs}}
+          <figure>
+            <figcaption>{{path}}</figcaption>
+            <img src="{{url}}" alt="" />
+          </figure>
+        {{/each}}
+    {{else}}
+      This build failed but this is not due to a visual regression.
+    {{/if}}
+  </body>
+</html>
