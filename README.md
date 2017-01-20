@@ -16,6 +16,12 @@ You'll need a valid CircleCI API token stored as the `CIRCLECI_TOKEN` environmen
 
 ## Usage
 
-`node server.js`
+`node server.js --username [some CI username] --project [some CI project]`
 
 this will start a server listening on port 3000. So http://localhost:3000 is where you'll start having some fun ;)
+
+`--directory` is available but defaults to `diff/`
+
+## Help
+
+Running `node server.js` will show this command's help.
