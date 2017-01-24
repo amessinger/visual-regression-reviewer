@@ -29,11 +29,10 @@ exports.getDiffs = (buildNumber)=> {
   });
 };
 
-exports.getBuilds = (buildNumber)=> {
-  return new Promise((resolve)=> {
-    ci.getBuilds({
-      username,
-      project
-    }).then(resolve);
+exports.getBuilds = (filter = '')=> {
+  return ci.getBuilds({
+    username,
+    project,
+    filter
   });
 };
