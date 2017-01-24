@@ -10,8 +10,7 @@ server.route({
   method: 'GET',
   path: '/',
   handler: function (request, reply) {
-    circleci.getBuilds(request.params.build).then((builds)=> {
-      builds = builds.filter((build)=> build.status === 'failed');
+    circleci.getBuilds('failed').then((builds)=> {
       reply(renderer.render('build/list', { builds }));
     });
   }
