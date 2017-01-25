@@ -18,9 +18,16 @@ You'll need a valid CircleCI API token stored as the `CIRCLECI_TOKEN` environmen
 
 `node server.js --username [some CI username] --project [some CI project]`
 
+or
+
+`npm start -- --username [some CI username] --project [some CI project]` (managed by [`nodemon`](https://github.com/remy/nodemon))
+
 this will start a server listening on port 3000. So http://localhost:3000 is where you'll start having some fun ;)
 
 `--directory` is available but defaults to `diff/`
+
+
+
 
 ## Help
 
